@@ -18,17 +18,17 @@
 }
 
 :root[data-theme="dark"] {
-  --background: #171916;
-  --foreground: #e7e8df;
-  --muted: #a2a69c;
-  --border: #363a32;
-  --border-soft: #2d312a;
+  --background: #000000;
+  --foreground: #e8e8e8;
+  --muted: #a3a3a3;
+  --border: #333333;
+  --border-soft: #242424;
   --accent: var(--foreground);
   --accent-soft: var(--border-soft);
-  --contribution-0: #2d332d;
-  --contribution-1: #485045;
-  --contribution-2: #71796a;
-  --contribution-3: #a3ab9a;
+  --contribution-0: #242424;
+  --contribution-1: #484848;
+  --contribution-2: #747474;
+  --contribution-3: #a3a3a3;
   --contribution-4: var(--foreground);
   --art-background: var(--background);
   --art-ink: var(--foreground);
