@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
     "build": "next build",
-    "preview": "node scripts/preview.mjs",
+    "preview": "next start --hostname 127.0.0.1",
+    "test:calendar": "node --experimental-strip-types --test scripts/github-calendar.test.mjs",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },

@@ -5,6 +5,8 @@ import { ThemeArt } from "@/components/theme-art";
 import { profile } from "@/data/portfolio";
 import styles from "@/components/portfolio.module.css";
 
+export const revalidate = 3600;
+
 export default function AboutPage() {
   return <div className={styles.aboutGrid}>
     <div className={styles.aboutContent}>

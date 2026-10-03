@@ -1,6 +1,6 @@
 # Aditya's portfolio
 
-A three-page portfolio inspired by the restrained typography, borders, and layout of akramcodez.com. Built with Next.js App Router, React, TypeScript, and CSS Modules. All pages export as static files.
+A three-page portfolio inspired by the restrained typography, borders, and layout of akramcodez.com. Built with Next.js App Router, React, TypeScript, and CSS Modules. Pages are prerendered; the About page refreshes its public GitHub contribution calendar hourly using Next.js incremental static regeneration on Vercel.
 
 ## Run locally
 
@@ -27,22 +27,23 @@ Open http://127.0.0.1:3000. In PowerShell, use `npm.cmd` if script execution pol
 
 Design colors are in `src/app/globals.css`. Layout and component styling are in `src/components/portfolio.module.css`. The theme toggle saves a visitor's choice in local storage; light is the initial default.
 
-## Validate and preview the static export
+## Validate and preview the production build
 
 ```sh
 npm run lint
 npm run typecheck
+npm run test:calendar
 npm run build
 npm run preview
 ```
 
-Stop the development server before running the preview on port 3000, or set `PORT` to another port. The export is written to `out/`. The preview server binds only to the local machine. No deployment, database, API keys, or backend are required.
+Stop the development server before running the preview on port 3000, or set `PORT` to another port. The production build is written to `.next/`. The preview server binds only to the local machine. No database or API keys are required. The contribution calendar reads the publicly visible calendar from GitHub on the server, caches it for an hour, and shows the last three months with daily hover counts. Regeneration errors preserve the last successfully rendered page; an unavailable or changed data source never produces invented contribution counts.
 
-Pages: `/`, `/work/`, `/projects/`, plus a custom 404. No blogs, support page, live GitHub contribution API, or contact form is included.
+Pages: `/`, `/work/`, `/projects/`, plus a custom 404. No blogs, support page, or contact form is included.
 
 ## GitHub and Vercel
 
-The private GitHub repository is `adi29m/portfolio-website`. The Vercel project is `portfolio-website` under `adi29ms-projects`. Vercel builds the Next.js static export from source using its Next.js adapter. Deployments currently use the Vercel CLI; automatic GitHub deployments are not connected because Vercel could not access the private repository.
+The private GitHub repository is `adi29m/portfolio-website`. The live site is https://portfolio-website-inky-five-45.vercel.app. The Vercel project is `portfolio-website` under `adi29ms-projects`. Vercel builds Next.js from source using its Next.js adapter, including the hourly About page regeneration. Deployments currently use the Vercel CLI; automatic GitHub deployments are not connected because Vercel could not access the private repository.
 
 To publish updates after validation, push your changes to GitHub and run `vercel deploy --prod --scope adi29ms-projects` from the linked project directory. To enable automatic deployments later, grant the Vercel GitHub integration access to this repository and connect it in the project's Git settings.
 

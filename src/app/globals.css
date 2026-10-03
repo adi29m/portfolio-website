@@ -6,6 +6,11 @@
   --border-soft: #e9eae3;
   --accent: #315fa5;
   --accent-soft: #edf2fa;
+  --contribution-0: #e6e7df;
+  --contribution-1: #b8cdf4;
+  --contribution-2: #7da5ec;
+  --contribution-3: #3d73da;
+  --contribution-4: #194bb7;
   --art-background: #eff3f9;
   --art-ink: #315d9f;
   --mono: "IBM Plex Mono", ui-monospace, monospace;
@@ -20,6 +25,11 @@
   --border-soft: #2d312a;
   --accent: #95b8f3;
   --accent-soft: #222e3f;
+  --contribution-0: #2d332d;
+  --contribution-1: #294673;
+  --contribution-2: #3b68ad;
+  --contribution-3: #6394e1;
+  --contribution-4: #a7c6ff;
   --art-background: #1b2532;
   --art-ink: #91b2e6;
   color-scheme: dark;

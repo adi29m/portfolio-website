@@ -34,12 +34,17 @@
 .asideHeading { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 14px; }
 .asideHeading h2, .asideLabel { font: 10px/1.7 var(--mono); text-transform: uppercase; letter-spacing: 1.4px; color: var(--muted); }
 .asideHeading > a { font: 10px/1.7 var(--mono); text-decoration: underline; }
-.githubCard { display: block; border: 1px solid var(--border); padding: 19px 17px 14px; transition: border-color 160ms, background 160ms; }
-.githubCard:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--foreground); }
-.repoTop { display: flex; align-items: center; gap: 10px; color: var(--accent); }
-.repoTop > span { font: 10px/1.5 var(--mono); }
-.githubCard > p { font-size: 19px; line-height: 1.5; letter-spacing: -0.55px; margin: 23px 0; }
-.repoBottom { display: flex; justify-content: space-between; align-items: center; font: 10px/1.7 var(--mono); color: var(--muted); padding-top: 12px; border-top: 1px solid var(--border-soft); }
+.githubCard { display: block; border: 1px solid var(--border); padding: 14px 12px 15px; transition: border-color 160ms; }
+.githubCard:hover { border-color: var(--accent); color: var(--foreground); }
+.contributionChart { width: 100%; height: auto; }
+.contributionMonth { fill: var(--muted); font: 7px var(--mono); }
+.contributionDay { fill: var(--contribution-0); }
+.contributionDay[data-level="1"] { fill: var(--contribution-1); }
+.contributionDay[data-level="2"] { fill: var(--contribution-2); }
+.contributionDay[data-level="3"] { fill: var(--contribution-3); }
+.contributionDay[data-level="4"] { fill: var(--contribution-4); }
+.githubCard .contributionTotal { margin-top: 14px; color: var(--muted); font: 10px/1.8 var(--mono); }
+.contributionTotal strong { color: var(--accent); font-weight: 500; }
 .statusList, .linkList { margin: 13px 0 0; padding: 0; list-style: none; font: 11px/1.85 var(--mono); }
 .statusList { display: grid; gap: 10px; }
 .statusList li { display: flex; align-items: flex-start; gap: 9px; }
@@ -109,7 +114,6 @@
   .biography { font-size: 14px; line-height: 1.8; }
   .sidebar { border-left: 0; border-top: 1px solid var(--border); padding: 28px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
   .sidebarSection + .sidebarSection { margin-top: 0; }
-  .githubCard > p { font-size: 17px; }
   .projectGrid { grid-template-columns: 1fr; gap: 26px; }
   .projectBody { padding: 20px; }
   .experience { padding: 18px 15px; gap: 13px; }
@@ -124,7 +128,6 @@
 @media (max-width: 480px) {
   .sidebar { grid-template-columns: 1fr; }
   .sidebarSection + .sidebarSection { margin-top: 3px; }
-  .githubCard > p { font-size: 21px; }
   .footer { flex-wrap: wrap; }
   .focusGrid { grid-template-columns: 1fr; }
   .focusGrid > div, .focusGrid > div:first-child { display: flex; align-items: baseline; gap: 15px; padding: 13px 0; border: 0; border-bottom: 1px solid var(--border-soft); }
