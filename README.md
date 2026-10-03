@@ -42,7 +42,9 @@ Pages: `/`, `/work/`, `/projects/`, plus a custom 404. No blogs, support page, l
 
 ## GitHub and Vercel
 
-The GitHub repository is `adi29m/portfolio-website`. The Vercel project is `portfolio-website` under `adi29ms-projects`, connected to the repository's `main` branch for production deployments. Vercel builds the Next.js static export from source.
+The private GitHub repository is `adi29m/portfolio-website`. The Vercel project is `portfolio-website` under `adi29ms-projects`. Vercel builds the Next.js static export from source using its Next.js adapter. Deployments currently use the Vercel CLI; automatic GitHub deployments are not connected because Vercel could not access the private repository.
+
+To publish updates after validation, push your changes to GitHub and run `vercel deploy --prod --scope adi29ms-projects` from the linked project directory. To enable automatic deployments later, grant the Vercel GitHub integration access to this repository and connect it in the project's Git settings.
 
 The local `.vercel/` project link, environment files, build output, and verification artifacts are excluded from Git. `.vercelignore` also keeps local verification artifacts and temporary source previews out of CLI uploads.
 
