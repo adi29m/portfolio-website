@@ -2,17 +2,6 @@
 
 A three-page portfolio inspired by the restrained typography, borders, and layout of akramcodez.com. Built with Next.js App Router, React, TypeScript, and CSS Modules. Pages are prerendered; the About page refreshes its public GitHub contribution calendar hourly using Next.js incremental static regeneration on Vercel.
 
-## Run locally
-
-Use Node.js 24 and npm.
-
-```sh
-npm ci
-npm run dev
-```
-
-Open http://127.0.0.1:3000. In PowerShell, use `npm.cmd` if script execution policy prevents running `npm`.
-
 ## Edit your content
 
 `src/data/portfolio.ts` contains the name, subtitle, biography, current status, experience, and all four projects. Edit that file to update the site. Project order follows the array order; work entries are ordered by their starting date, newest first.
