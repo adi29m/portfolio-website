@@ -6,6 +6,7 @@ import "@fontsource/dancing-script/600.css";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { profile } from "@/data/portfolio";
+import { artwork } from "@/data/artwork";
 import styles from "@/components/portfolio.module.css";
 
 export const metadata: Metadata = {
@@ -17,7 +18,9 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: profile.name, description: profile.description },
 };
 
-const initializeTheme = `(function(){try{var t=localStorage.getItem('portfolio-theme');document.documentElement.dataset.theme=t==='dark'?'dark':'light'}catch(e){document.documentElement.dataset.theme='light'}})();`;
+// Use the exact same hashed URLs as ThemeArt so the visible image reuses its preload.
+const artworkUrls = JSON.stringify({ light: artwork.light.src, dark: artwork.dark.src });
+const initializeTheme = `(function(){var theme='light';try{if(localStorage.getItem('portfolio-theme')==='dark')theme='dark'}catch(e){}document.documentElement.dataset.theme=theme;if(location.pathname==='/'){var urls=${artworkUrls};var link=document.createElement('link');link.rel='preload';link.as='image';link.href=urls[theme];link.fetchPriority='high';document.head.appendChild(link)}})();`;
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en" suppressHydrationWarning>
