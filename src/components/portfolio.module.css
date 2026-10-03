@@ -47,8 +47,8 @@
 .contributionTotal strong { color: var(--accent); font-weight: 500; }
 .statusList, .linkList { margin: 13px 0 0; padding: 0; list-style: none; font: 11px/1.85 var(--mono); }
 .statusList { display: grid; gap: 10px; }
-.statusList li { display: flex; align-items: flex-start; gap: 9px; }
-.statusList li > span { color: var(--accent); font-size: 14px; }
+.statusList li { display: flex; align-items: baseline; gap: 9px; }
+.statusList li > span { color: var(--accent); flex-shrink: 0; }
 .linkList li + li { margin-top: 8px; }
 .linkList a { display: flex; gap: 7px; align-items: baseline; }
 .linkList a > span { color: var(--muted); }
