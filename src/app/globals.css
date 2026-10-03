@@ -18,7 +18,7 @@
 }
 
 :root[data-theme="dark"] {
-  --background: #000000;
+  --background: #0e0e0c;
   --foreground: #e8e8e8;
   --muted: #a3a3a3;
   --border: #333333;
